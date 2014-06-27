@@ -4,8 +4,8 @@ Ember Data ~~Local~~ Session Storage Adapter
 Store your ember application data in ~~localStorage~~ sessionStorage.
 
 #NOTE:
-**NOTE**: This is exactly the same as the localStorage adapter except that it's been modified to use sessionStorage instead.
-
+This is exactly the same as the localStorage adapter except that it's been modified to use sessionStorage instead.
+---
 Compatible with Ember Data 1.0.beta.6.
 
 **NOTE**: New versions of the `localStorage` adapter are no longer compatible
