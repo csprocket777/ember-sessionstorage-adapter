@@ -257,22 +257,22 @@
     },
 
     loadData: function () {
-      var storage = localStorage.getItem(this.adapterNamespace());
+      var storage = sessionStorage.getItem(this.adapterNamespace());
       return storage ? JSON.parse(storage) : {};
     },
 
     persistData: function(type, data) {
       var modelNamespace = this.modelNamespace(type),
-          localStorageData = this.loadData();
+          sessionStorageData = this.loadData();
 
-      localStorageData[modelNamespace] = data;
+      sessionStorageData[modelNamespace] = data;
 
-      localStorage.setItem(this.adapterNamespace(), JSON.stringify(localStorageData));
+      sessionStorage.setItem(this.adapterNamespace(), JSON.stringify(sessionStorageData));
     },
 
     _namespaceForType: function (type) {
       var namespace = this.modelNamespace(type),
-          storage   = localStorage.getItem(this.adapterNamespace());
+          storage   = sessionStorage.getItem(this.adapterNamespace());
 
       return storage ? JSON.parse(storage)[namespace] || {records: {}} : {records: {}};
     },
